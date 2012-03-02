@@ -106,8 +106,8 @@ namespace TrainTest
 
         private int GetCount(string start, string end, int maxDistance, int alreadyTravelled)
         {
-            int count = 0;
-            var trainPaths = _trainPaths.Where(path=>path.ComeFrom(start));
+            var count = 0;
+            var trainPaths = PathsComeFrom(start);
 
             foreach (var trainPath in trainPaths)
             {
@@ -120,6 +120,11 @@ namespace TrainTest
                 count += GetCount(trainPath.End, end, maxDistance, travelled);
             }
             return count;
+        }
+
+        private IEnumerable<TrainPath> PathsComeFrom(string start)
+        {
+            return _trainPaths.Where(path=>path.ComeFrom(start)).ToList();
         }
     }
 }
