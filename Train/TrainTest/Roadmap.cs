@@ -45,7 +45,7 @@ namespace TrainTest
         public int TripCountWithMaxStops(string start, string end, int maxStops)
         {
             var tripCount = 0;
-            var trainPaths = _trainPaths.Where(path=>path.ComeFrom(start)).ToList();
+            var trainPaths = PathsComeFrom(start);
             while (maxStops-- > 0)
             {
                 if (trainPaths.Count() == 0) return tripCount;
@@ -60,7 +60,7 @@ namespace TrainTest
 
         public int TripCountWithFixStops(string start, string end, int exactStops)
         {
-            var trainPaths = _trainPaths.Where(path=>path.ComeFrom(start));
+            var trainPaths = PathsComeFrom(start);
 
             return exactStops == 0 ? trainPaths.Count(path=>path.GoTo(end))
                 : trainPaths.Sum(trainPath => TripCountWithFixStops(trainPath.End, end, exactStops - 1));
