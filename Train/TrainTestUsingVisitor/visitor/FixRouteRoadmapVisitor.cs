@@ -13,10 +13,10 @@ namespace TrainTestUsingVisitor.visitor
         }
 
         public string StartStation { get; set; }
-        public string[] Stations { get; set; }
+        private string[] Stations { get; set; }
         private readonly List<Edge> _visitedEdges = new List<Edge>();
 
-        public string Result { set; get;}
+        public string Result { private set; get;}
 
         public VisitStatus VisitEdge(Edge edge)
         {

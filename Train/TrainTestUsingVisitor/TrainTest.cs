@@ -79,11 +79,22 @@ namespace TrainTestUsingVisitor
         }
 
         [Fact]
-        public void should_get_the_shortest_path_from_a_to_c()
+        public void should_return_int_max_when_path_not_found()
         {
             var roadmap = new Roadmap();
             roadmap.AddPath("A", "B", 5);
             roadmap.AddPath("B", "C", 5);
+            roadmap.AddPath("B", "A", 5);
+            var visitor = new ShortestPathRoadmapVisitor("A","D");
+            roadmap.Accept(visitor);
+            Assert.Equal(int.MaxValue, visitor.ShortestDistance);
+        }
+
+        [Fact]
+        public void should_get_the_shortest_path_from_a_to_c()
+        {
+            var roadmap = new Roadmap();
+            
             var visitor = new ShortestPathRoadmapVisitor("A", "C");
             roadmap.Accept(visitor);
             Assert.Equal(10, visitor.ShortestDistance);
