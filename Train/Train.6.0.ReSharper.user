@@ -6,155 +6,215 @@
         <UnitTestElement Provider="xUnit" Id="TrainTest.TrainTest" type="XunitTestClassElement" projectId="089D1B5A-C170-4D14-A677-2F79D93A14FF" />
         <UnitTestElement Provider="xUnit" Id="TrainTest.TrainTest.should_get_expected_output_if_no_path" ParentId="TrainTest.TrainTest" type="XunitTestMethodElement" projectId="089D1B5A-C170-4D14-A677-2F79D93A14FF" typeName="TrainTest.TrainTest" methodName="should_get_expected_output_if_no_path" skipReason="" />
         <UnitTestElement Provider="xUnit" Id="TrainTest.TrainTest.should_get_path_when_have_more_than_two_station" ParentId="TrainTest.TrainTest" type="XunitTestMethodElement" projectId="089D1B5A-C170-4D14-A677-2F79D93A14FF" typeName="TrainTest.TrainTest" methodName="should_get_path_when_have_more_than_two_station" skipReason="" />
+        <UnitTestElement Provider="xUnit" Id="TrainTest.TrainTest.should_get_the_shortest_path_from_a_to_a" ParentId="TrainTest.TrainTest" type="XunitTestMethodElement" projectId="089D1B5A-C170-4D14-A677-2F79D93A14FF" typeName="TrainTest.TrainTest" methodName="should_get_the_shortest_path_from_a_to_a" skipReason="" />
         <UnitTestElement Provider="xUnit" Id="TrainTest.TrainTest.should_get_the_shortest_path_from_a_to_c" ParentId="TrainTest.TrainTest" type="XunitTestMethodElement" projectId="089D1B5A-C170-4D14-A677-2F79D93A14FF" typeName="TrainTest.TrainTest" methodName="should_get_the_shortest_path_from_a_to_c" skipReason="" />
         <UnitTestElement Provider="xUnit" Id="TrainTest.TrainTest.should_get_trip_count_with_exactly_4_stops" ParentId="TrainTest.TrainTest" type="XunitTestMethodElement" projectId="089D1B5A-C170-4D14-A677-2F79D93A14FF" typeName="TrainTest.TrainTest" methodName="should_get_trip_count_with_exactly_4_stops" skipReason="" />
         <UnitTestElement Provider="xUnit" Id="TrainTest.TrainTest.should_get_trip_count_within_3_stops" ParentId="TrainTest.TrainTest" type="XunitTestMethodElement" projectId="089D1B5A-C170-4D14-A677-2F79D93A14FF" typeName="TrainTest.TrainTest" methodName="should_get_trip_count_within_3_stops" skipReason="" />
-        <UnitTestElement Provider="xUnit" Id="TrainTest.TrainTest.should_got_path_between_adjacent_station" ParentId="TrainTest.TrainTest" type="XunitTestMethodElement" projectId="089D1B5A-C170-4D14-A677-2F79D93A14FF" typeName="TrainTest.TrainTest" methodName="should_got_path_between_adjacent_station" skipReason="" />
+        <UnitTestElement Provider="xUnit" Id="TrainTest.TrainTest.should_get_trip_count_within_certain_distance" ParentId="TrainTest.TrainTest" type="XunitTestMethodElement" projectId="089D1B5A-C170-4D14-A677-2F79D93A14FF" typeName="TrainTest.TrainTest" methodName="should_get_trip_count_within_certain_distance" skipReason="" />
       </Elements>
     </Session>
   </UnitTestSessions>
   <RecentFiles>
     <RecentFiles>
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainPath.cs" caret="0" fromTop="0" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3350" fromTop="21" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="2838" fromTop="14" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3501" fromTop="6" />
+      <File id="137AD476-882A-452D-BE6A-A2447985E6A8/f:Program.cs" caret="574" fromTop="16" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainPath.cs" caret="1055" fromTop="11" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3114" fromTop="10" />
     </RecentFiles>
     <RecentEdits>
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3387" fromTop="13" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3387" fromTop="19" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3387" fromTop="15" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="554" fromTop="18" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3387" fromTop="4" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3387" fromTop="22" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3387" fromTop="7" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3387" fromTop="14" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3387" fromTop="19" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="580" fromTop="13" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="1123" fromTop="26" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="818" fromTop="11" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3387" fromTop="26" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="218" fromTop="11" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="2114" fromTop="15" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="2032" fromTop="16" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="2905" fromTop="26" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="2386" fromTop="8" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="2239" fromTop="16" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3365" fromTop="23" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3392" fromTop="17" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="2512" fromTop="10" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="1902" fromTop="3" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3266" fromTop="19" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3080" fromTop="18" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3080" fromTop="1" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3080" fromTop="17" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3080" fromTop="12" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="621" fromTop="17" />
-      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="2821" fromTop="13" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3172" fromTop="23" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainPath.cs" caret="505" fromTop="16" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="2737" fromTop="11" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainPath.cs" caret="1092" fromTop="25" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainPath.cs" caret="301" fromTop="9" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="2341" fromTop="17" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3252" fromTop="22" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="2500" fromTop="11" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3083" fromTop="8" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="2605" fromTop="6" />
+      <File id="137AD476-882A-452D-BE6A-A2447985E6A8/f:Program.cs" caret="2104" fromTop="14" />
+      <File id="137AD476-882A-452D-BE6A-A2447985E6A8/f:Program.cs" caret="0" fromTop="0" />
+      <File id="137AD476-882A-452D-BE6A-A2447985E6A8/f:Program.cs" caret="2081" fromTop="25" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3679" fromTop="16" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="1824" fromTop="23" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3512" fromTop="18" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3512" fromTop="18" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3512" fromTop="15" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3568" fromTop="4" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="4156" fromTop="20" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3943" fromTop="18" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3429" fromTop="5" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:TrainTest.cs" caret="3705" fromTop="11" />
+      <File id="137AD476-882A-452D-BE6A-A2447985E6A8/f:Program.cs" caret="1675" fromTop="12" />
+      <File id="137AD476-882A-452D-BE6A-A2447985E6A8/f:Program.cs" caret="2044" fromTop="19" />
+      <File id="137AD476-882A-452D-BE6A-A2447985E6A8/f:Program.cs" caret="1387" fromTop="6" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="3769" fromTop="13" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="4365" fromTop="15" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="1439" fromTop="14" />
+      <File id="089D1B5A-C170-4D14-A677-2F79D93A14FF/f:Roadmap.cs" caret="1982" fromTop="17" />
     </RecentEdits>
   </RecentFiles>
   <CompletionStatisticsManager>
     <ItemStatistics item="CSharpCodeCompletionContext">
-      <Item value="public" priority="287" />
-      <Item value="void" priority="191" />
-      <Item value="roadmap" priority="639" />
-      <Item value="Assert`0" priority="479" />
-      <Item value="return" priority="671" />
-      <Item value="true" priority="31" />
-      <Item value="List" priority="152" />
-      <Item value="string" priority="159" />
-      <Item value="int" priority="383" />
-      <Item value="new" priority="447" />
-      <Item value="Distance" priority="196" />
-      <Item value="End" priority="197" />
+      <Item value="public" priority="511" />
+      <Item value="void" priority="287" />
+      <Item value="roadmap" priority="991" />
+      <Item value="Assert`0" priority="543" />
+      <Item value="return" priority="1023" />
+      <Item value="true" priority="95" />
+      <Item value="List" priority="246" />
+      <Item value="string" priority="287" />
+      <Item value="int" priority="830" />
+      <Item value="new" priority="575" />
+      <Item value="Distance" priority="228" />
+      <Item value="End" priority="261" />
       <Item value="Start" priority="192" />
-      <Item value="trainPath" priority="633" />
-      <Item value="TrainPath`0" priority="351" />
-      <Item value="_trainPaths" priority="382" />
-      <Item value="path" priority="892" />
-      <Item value="start" priority="319" />
-      <Item value="end" priority="285" />
+      <Item value="trainPath" priority="1175" />
+      <Item value="TrainPath`0" priority="479" />
+      <Item value="_trainPaths" priority="670" />
+      <Item value="path" priority="2107" />
+      <Item value="start" priority="735" />
+      <Item value="end" priority="730" />
       <Item value="list" priority="63" />
       <Item value="IEnumerable" priority="31" />
       <Item value="Roadmap`0" priority="31" />
-      <Item value="distance" priority="159" />
-      <Item value="Fact" priority="63" />
+      <Item value="distance" priority="351" />
+      <Item value="Fact" priority="127" />
       <Item value="calcPath" priority="63" />
       <Item value="const" priority="31" />
-      <Item value="var" priority="63" />
+      <Item value="var" priority="95" />
       <Item value="params" priority="63" />
-      <Item value="foreach" priority="223" />
+      <Item value="foreach" priority="383" />
       <Item value="adjacent" priority="31" />
       <Item value="followings" priority="62" />
       <Item value="next" priority="95" />
-      <Item value="if" priority="511" />
+      <Item value="if" priority="799" />
       <Item value="firstOrDefault" priority="62" />
-      <Item value="null" priority="124" />
+      <Item value="null" priority="188" />
       <Item value="else" priority="31" />
       <Item value="Roadmap" priority="115" />
-      <Item value="TrainPath" priority="144" />
+      <Item value="TrainPath" priority="202" />
       <Item value="Length" priority="26" />
       <Item value="firstPath" priority="62" />
       <Item value="try" priority="31" />
-      <Item value="PathDistance`0" priority="31" />
+      <Item value="PathDistance`0" priority="63" />
       <Item value="station" priority="95" />
-      <Item value="trainPaths" priority="445" />
-      <Item value="while" priority="63" />
+      <Item value="trainPaths" priority="605" />
+      <Item value="while" priority="95" />
       <Item value="maxStops" priority="30" />
-      <Item value="ends" priority="158" />
-      <Item value="tripCount" priority="223" />
+      <Item value="ends" priority="190" />
+      <Item value="tripCount" priority="255" />
       <Item value="TripCount`0" priority="31" />
       <Item value="exactStops" priority="93" />
       <Item value="TripCountWithFixStops`0" priority="31" />
-      <Item value="shortestPath" priority="159" />
+      <Item value="shortestPath" priority="191" />
       <Item value="private" priority="31" />
       <Item value="alreadyTravel" priority="190" />
       <Item value="shortest" priority="349" />
-      <Item value="continue" priority="31" />
+      <Item value="continue" priority="95" />
       <Item value="possiblePath" priority="95" />
       <Item value="possiblePaths" priority="127" />
       <Item value="List&lt;TrainPath&gt;" priority="28" />
       <Item value="PathLength`0" priority="31" />
-      <Item value="travelled" priority="31" />
+      <Item value="travelled" priority="94" />
       <Item value="Shortest`0" priority="31" />
+      <Item value="override" priority="31" />
+      <Item value="HasDirectPath`0" priority="31" />
+      <Item value="bool" priority="94" />
+      <Item value="count" priority="159" />
+      <Item value="paths" priority="190" />
+      <Item value="p" priority="159" />
+      <Item value="_start" priority="95" />
+      <Item value="_end" priority="63" />
+      <Item value="Match`0" priority="31" />
+      <Item value="ComeFrom`0" priority="31" />
+      <Item value="GoTo`0" priority="31" />
+      <Item value="f" priority="63" />
+      <Item value="route" priority="31" />
+      <Item value="nodeCounts" priority="31" />
+      <Item value="result" priority="63" />
+      <Item value="finished" priority="31" />
+      <Item value="accessingPaths" priority="30" />
+      <Item value="alreadyTravelled" priority="159" />
+      <Item value="currentShortestTrip" priority="255" />
+      <Item value="Traverse`0" priority="95" />
+      <Item value="false" priority="63" />
+      <Item value="NeverRouted" priority="63" />
+      <Item value="Min`0" priority="31" />
+      <Item value="Math`0" priority="63" />
+      <Item value="tripDistance" priority="31" />
+      <Item value="static" priority="31" />
+      <Item value="Console`0" priority="287" />
+      <Item value="calculateDistance" priority="127" />
+      <Item value="tripCountWithMaxStops" priority="31" />
+      <Item value="ContextStaticAttribute`0" priority="31" />
+      <Item value="tripCountWithFixStops" priority="63" />
+      <Item value="maxDistance" priority="94" />
+      <Item value="GetCount`0" priority="31" />
+      <Item value="PathsComeFrom`0" priority="63" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@Xunit.Assert">
-      <Item value="True`0" priority="26" />
+      <Item value="True`0" priority="54" />
       <Item value="Empty`0" priority="26" />
-      <Item value="Equal`1" priority="377" />
+      <Item value="Equal`1" priority="431" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:TrainTest.Roadmap">
       <Item value="Paths`0" priority="26" />
       <Item value="CalcPath`0" priority="80" />
-      <Item value="AddPath`0" priority="134" />
+      <Item value="AddPath`0" priority="215" />
       <Item value="TripCount`0" priority="108" />
-      <Item value="TripCountWithFixStops`0" priority="26" />
+      <Item value="TripCountWithFixStops`0" priority="53" />
+      <Item value="ShortestPath`0" priority="107" />
+      <Item value="CalculateDistance`0" priority="26" />
+      <Item value="TripCountWithMaxStops`0" priority="26" />
+      <Item value="TripCountLessThanDistance`0" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.List`1">
       <Item value="First`1" priority="54" />
-      <Item value="Add`0" priority="81" />
-      <Item value="Select`2" priority="26" />
+      <Item value="Add`0" priority="108" />
+      <Item value="Select`2" priority="161" />
       <Item value="Find`0" priority="26" />
-      <Item value="Where`1" priority="217" />
+      <Item value="Where`1" priority="381" />
       <Item value="FirstOrDefault`1" priority="80" />
       <Item value="Contains`0" priority="26" />
-      <Item value="Count`1" priority="26" />
+      <Item value="Count`1" priority="53" />
       <Item value="SingleOrDefault`1" priority="27" />
       <Item value="Any`1" priority="80" />
+      <Item value="AddRange`0" priority="27" />
+      <Item value="Single`1" priority="54" />
+      <Item value="Count" priority="26" />
+      <Item value="SelectMany`2" priority="26" />
+      <Item value="Distinct`1" priority="26" />
+      <Item value="Min`1" priority="26" />
+      <Item value="Sum`1" priority="26" />
+      <Item value="ForEach`0" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:TrainTest.TrainPath">
-      <Item value="Start" priority="377" />
-      <Item value="End" priority="459" />
-      <Item value="Distance" priority="431" />
+      <Item value="Start" priority="458" />
+      <Item value="End" priority="892" />
+      <Item value="Distance" priority="647" />
+      <Item value="Match`0" priority="80" />
+      <Item value="ComeFrom`0" priority="242" />
+      <Item value="GoTo`0" priority="269" />
+      <Item value="_start" priority="53" />
+      <Item value="_end" priority="26" />
+      <Item value="Connected`0" priority="81" />
+      <Item value="NeverRouted" priority="107" />
+      <Item value="Clear`0" priority="53" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Collections.Generic.IEnumerable`1">
-      <Item value="ToList`1" priority="80" />
-      <Item value="Count`1" priority="188" />
-      <Item value="Select`2" priority="134" />
+      <Item value="ToList`1" priority="297" />
+      <Item value="Count`1" priority="377" />
+      <Item value="Select`2" priority="161" />
       <Item value="Single`1" priority="26" />
-      <Item value="Concat`1" priority="26" />
-      <Item value="Contains`1" priority="53" />
+      <Item value="Concat`1" priority="53" />
+      <Item value="Contains`1" priority="80" />
       <Item value="Where`1" priority="81" />
       <Item value="SingleOrDefault`1" priority="26" />
+      <Item value="Any`1" priority="53" />
+      <Item value="Distinct`1" priority="26" />
+      <Item value="Join`4" priority="26" />
+      <Item value="Min`1" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:System.Int32">
       <Item value="ToString`0" priority="53" />
@@ -166,7 +226,14 @@
       <Item value="TripCount`0" priority="26" />
     </ItemStatistics>
     <ItemStatistics item="Qualified:@System.Int32">
-      <Item value="MaxValue" priority="80" />
+      <Item value="MaxValue" priority="188" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Math">
+      <Item value="Min`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.Console">
+      <Item value="WriteLine`0" priority="242" />
+      <Item value="ReadLine`0" priority="26" />
     </ItemStatistics>
   </CompletionStatisticsManager>
   <NAntValidationSettings>

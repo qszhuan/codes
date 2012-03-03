@@ -3,7 +3,7 @@ namespace TrainTest
     public class TrainPath
     {
         public const string NotExist = "NO SUCH ROUTE";
-        private string Start { get; set; }
+        public string Start { get; set; }
         public string End { get; private set; }
         public int Distance { get; private set; }
 

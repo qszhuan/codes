@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Roadmap.cs" />
+    <Compile Include="RoadmapWalker.cs" />
     <Compile Include="TrainPath.cs" />
     <Compile Include="TrainTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
