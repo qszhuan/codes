@@ -14,7 +14,6 @@ namespace TrainTest
 
         public string CalculateDistance(string start, string next, params string[] followings)
         {
-            
             int distance;
             try
             {
