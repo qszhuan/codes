@@ -6,11 +6,7 @@ namespace TrainTestUsingVisitor
 {
     public class Roadmap
     {
-
-        public HashSet<Station> Stations = new HashSet<Station>(); 
-        public Roadmap()
-        {
-        }
+        private readonly HashSet<Station> _stations = new HashSet<Station>();
 
         public void AddPath(string start, string end, int distance)
         {
@@ -23,18 +19,18 @@ namespace TrainTestUsingVisitor
 
         private Station AddStation(string stationName)
         {
-            var find = Stations.FirstOrDefault(station=>station.Name == stationName);
+            var find = _stations.FirstOrDefault(station=>station.Name == stationName);
             if (find == null)
             {
                 find = new Station(stationName);
-                Stations.Add(find);
+                _stations.Add(find);
             }
             return find;
         }
 
         public void Accept(IRoadmapVisitor visitor)
         {
-            var startStation = Stations.SingleOrDefault(station=>station.Name == visitor.StartStation);
+            var startStation = _stations.SingleOrDefault(station=>station.Name == visitor.StartStation);
             if (startStation != null) startStation.Accept(visitor);
         }
     }

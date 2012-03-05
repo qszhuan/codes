@@ -6,7 +6,7 @@ namespace TrainTestUsingVisitor
     public class Station
     {
         public string Name { get; private set; }
-        public List<Edge> Edges = new List<Edge>();
+        public List<Edge> OutboundEdges = new List<Edge>();
 
         public Station(string name)
         {
@@ -14,7 +14,7 @@ namespace TrainTestUsingVisitor
         }
         public void AddEdge(Edge path)
         {
-            Edges.Add(path);
+            OutboundEdges.Add(path);
         }
 
         public VisitStatus Accept(IRoadmapVisitor visitor)
@@ -27,7 +27,7 @@ namespace TrainTestUsingVisitor
                 return visitStatus;
             }
 
-            foreach (var edge in Edges)
+            foreach (var edge in OutboundEdges)
             {
                 var status = edge.Accept(visitor);
                 if (status != VisitStatus.Satisfied) continue;
