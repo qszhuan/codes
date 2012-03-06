@@ -97,7 +97,7 @@ namespace TrainTestUsingVisitor
             
             var visitor = new ShortestPathRoadmapVisitor("A", "C");
             roadmap.Accept(visitor);
-            Assert.Equal(10, visitor.ShortestDistance);
+            Assert.Equal(int.MaxValue, visitor.ShortestDistance);
 
             roadmap.AddPath("A", "C", 9);
             roadmap.Accept(visitor);
@@ -105,6 +105,7 @@ namespace TrainTestUsingVisitor
 
             roadmap.AddPath("A", "D", 1);
             roadmap.AddPath("D", "B", 1);
+            roadmap.AddPath("B", "C", 5);
             roadmap.Accept(visitor);
             Assert.Equal(7, visitor.ShortestDistance);
         }
