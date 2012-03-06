@@ -23,7 +23,7 @@ namespace TrainTestUsingVisitor.visitor
         public VisitStatus VisitEdge(Edge edge)
         {
             if (!edge.Passed)
-                return VisitStatus.GiveupOneRoute;
+                return VisitStatus.GiveupRoute;
 
             edge.PassThrough();
             _visitedEdges.Add(edge);
@@ -36,13 +36,13 @@ namespace TrainTestUsingVisitor.visitor
 
             var routedDistance = _visitedEdges.Sum(e => e.Distance);
             var tooFar = routedDistance > ShortestDistance;
-            if (tooFar) return VisitStatus.GiveupOneRoute;
+            if (tooFar) return VisitStatus.GiveupRoute;
 
             if (station.Name == EndStation)
             {
                 ShortestDistance = routedDistance;
                 Print();
-                return VisitStatus.GiveupOneRoute;
+                return VisitStatus.GiveupRoute;
             }
 
             return VisitStatus.ContinueRoute;

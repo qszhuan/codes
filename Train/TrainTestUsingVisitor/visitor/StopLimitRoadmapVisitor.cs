@@ -24,7 +24,7 @@ namespace TrainTestUsingVisitor.visitor
         {
             if (_alreadyStops > MaxStops)
             {
-                return VisitStatus.GiveupOneRoute;
+                return VisitStatus.GiveupRoute;
             }
 
             if (_alreadyStops != 0 && EndStation == station.Name)

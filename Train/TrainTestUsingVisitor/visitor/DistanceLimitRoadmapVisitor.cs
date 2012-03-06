@@ -23,7 +23,7 @@ namespace TrainTestUsingVisitor.visitor
 
         public VisitStatus VisitEdge(Edge edge)
         {
-            if (_routedEdges.Sum(e => e.Distance)+ edge.Distance >= _maxDistance) return VisitStatus.GiveupOneRoute;
+            if (_routedEdges.Sum(e => e.Distance)+ edge.Distance >= _maxDistance) return VisitStatus.GiveupRoute;
             _routedEdges.Add(edge);
 //            Print();
             return VisitStatus.ContinueRoute;

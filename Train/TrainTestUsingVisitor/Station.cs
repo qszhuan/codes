@@ -17,33 +17,27 @@ namespace TrainTestUsingVisitor
             Edges.Add(path);
         }
 
-        public VisitStatus Accept(IRoadmapVisitor visitor)
+        public void Accept(IRoadmapVisitor visitor)
         {
             visitor.EnterStation(this);
-            var visitStatus = visitor.VisitStation(this);
-            if (visitStatus != VisitStatus.ContinueRoute)
+            if (visitor.VisitStation(this) != VisitStatus.ContinueRoute)
             {
                 visitor.LeaveStation(this);
-                return visitStatus;
+                return;
             }
 
             foreach (var edge in Edges)
             {
-                var status = edge.Accept(visitor);
-                if (status != VisitStatus.Satisfied) continue;
-
-                visitor.LeaveStation(this);
-                return status;
+                if (visitor.VisitEdge(edge) == VisitStatus.GiveupRoute) continue;
+                edge.EndStation.Accept(visitor);
             }
             visitor.LeaveStation(this);
-            return visitStatus;
         }
     }
 
     public enum VisitStatus
     {
         ContinueRoute,
-        GiveupOneRoute,
-        Satisfied
+        GiveupRoute
     }
 }

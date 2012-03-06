@@ -5,7 +5,7 @@ namespace TrainTestUsingVisitor
     public class Edge
     {
         private Station StartStation { get; set; }
-        private Station EndStation { get; set; }
+        public Station EndStation { get; set; }
         public int Distance { get; private set; }
         public bool Passed { get; set; }
         public const string NotExist = "NO SUCH ROUTE";
@@ -31,12 +31,6 @@ namespace TrainTestUsingVisitor
         public void Clear()
         {
             Passed = true;
-        }
-
-        public VisitStatus Accept(IRoadmapVisitor visitor)
-        {
-            var status = visitor.VisitEdge(this);
-            return status != VisitStatus.GiveupOneRoute ? EndStation.Accept(visitor) : status;
         }
 
         public override string ToString()

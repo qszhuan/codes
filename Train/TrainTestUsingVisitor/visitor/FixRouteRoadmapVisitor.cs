@@ -27,14 +27,14 @@ namespace TrainTestUsingVisitor.visitor
         public VisitStatus VisitStation(Station station)
         {
             var currentIndex = _visitedEdges.Count;
-            if (currentIndex == Stations.Length) return VisitStatus.GiveupOneRoute;
+            if (currentIndex == Stations.Length) return VisitStatus.GiveupRoute;
 
             if (station.Name == Stations.ElementAt(currentIndex))
             {
                 if (currentIndex + 1 == Stations.Length)
                 {
                     Result = _visitedEdges.Sum(e => e.Distance).ToString();
-                    return VisitStatus.Satisfied;
+                    return VisitStatus.GiveupRoute;
                 }
             }
             return VisitStatus.ContinueRoute;
@@ -47,9 +47,9 @@ namespace TrainTestUsingVisitor.visitor
 
         public void LeaveStation(Station station)
         {
-            if (_visitedEdges.Count == 0) return;
-            var lastEdgeIndex = _visitedEdges.Count-1;
-            _visitedEdges.RemoveAt(lastEdgeIndex);
+//            if (_visitedEdges.Count == 0) return;
+//            var lastEdgeIndex = _visitedEdges.Count-1;
+//            _visitedEdges.RemoveAt(lastEdgeIndex);
         }
     }
 }

@@ -26,7 +26,7 @@ namespace TrainTestUsingVisitor.visitor
         {
             if (_alreadyStops > _exactStops)
             {
-                return VisitStatus.GiveupOneRoute;
+                return VisitStatus.GiveupRoute;
             }
 
             if (EndStation == station.Name && _alreadyStops == _exactStops)
