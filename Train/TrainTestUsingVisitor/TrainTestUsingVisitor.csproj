@@ -39,7 +39,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="xunit">
-      <HintPath>..\..\..\..\c#\c#ref\xunit-1.8\xunit.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\PWC\gde\libs\xunit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

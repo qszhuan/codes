@@ -107,7 +107,12 @@ namespace TrainTestUsingVisitor
             roadmap.AddPath("D", "B", 1);
             roadmap.AddPath("B", "C", 5);
             roadmap.Accept(visitor);
-            Assert.Equal(7, visitor.ShortestDistance);
+
+            roadmap.AddPath("A", "E", 2);
+            roadmap.AddPath("E", "C", 3);
+            roadmap.Accept(visitor);
+
+            Assert.Equal(5, visitor.ShortestDistance);
         }
 
         [Fact]

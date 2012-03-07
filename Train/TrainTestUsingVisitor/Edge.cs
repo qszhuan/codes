@@ -7,7 +7,7 @@ namespace TrainTestUsingVisitor
         private Station StartStation { get; set; }
         public Station EndStation { get; set; }
         public int Distance { get; private set; }
-        public bool Passed { get; set; }
+        public bool Passed { get; private set; }
         public const string NotExist = "NO SUCH ROUTE";
 
         public Edge(Station start, Station end, int distance)

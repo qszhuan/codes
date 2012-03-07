@@ -20,16 +20,13 @@ namespace TrainTestUsingVisitor
         public void Accept(IRoadmapVisitor visitor)
         {
             visitor.EnterStation(this);
-            if (visitor.VisitStation(this) != VisitStatus.ContinueRoute)
+            if (visitor.VisitStation(this) == VisitStatus.ContinueRoute)
             {
-                visitor.LeaveStation(this);
-                return;
-            }
-
-            foreach (var edge in OutboundEdges)
-            {
-                if (visitor.VisitEdge(edge) == VisitStatus.GiveupRoute) continue;
-                edge.EndStation.Accept(visitor);
+                foreach (var edge in OutboundEdges)
+                {
+                    if (visitor.VisitEdge(edge) == VisitStatus.GiveupRoute) continue;
+                    edge.EndStation.Accept(visitor);
+                }
             }
             visitor.LeaveStation(this);
         }
