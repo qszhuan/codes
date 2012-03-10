@@ -25,5 +25,10 @@ namespace refactoring_to_visitor.TreeTraversal
 
         public string FolderName { get; set; }
         public string Category { get; set; }
+
+        public void Accept(TreeVisitor treeVisitor)
+        {
+            treeVisitor.VisitFolder(this);
+        }
     }
 }

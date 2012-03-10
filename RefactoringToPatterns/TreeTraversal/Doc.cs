@@ -22,5 +22,10 @@ namespace refactoring_to_visitor.TreeTraversal
         }
 
         public List<IElement> Elements = new List<IElement>();
+
+        public void Accept(TreeVisitor treeVisitor)
+        {
+            treeVisitor.VisitDoc(this);
+        }
     }
 }

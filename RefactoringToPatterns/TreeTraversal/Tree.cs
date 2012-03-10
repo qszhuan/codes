@@ -19,22 +19,12 @@ namespace refactoring_to_visitor.TreeTraversal
             treeVisitor.Visit(this);
             foreach (var folder in Folders)
             {
-                Accept(folder, treeVisitor);
+                folder.Accept(treeVisitor);
             }
             foreach (var doc in Docs)
             {
-                Accept(doc, treeVisitor);
+                doc.Accept(treeVisitor);
             }
-        }
-
-        private void Accept(Doc doc, TreeVisitor treeVisitor)
-        {
-            treeVisitor.VisitDoc(doc);
-        }
-
-        private void Accept(Folder folder, TreeVisitor treeVisitor)
-        {
-            treeVisitor.VisitFolder(folder);
         }
     }
 }
