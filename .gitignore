@@ -2,5 +2,5 @@ bin
 obj
 _ReSharper*
 .hg*
-*_ReSharper*
+*.user
 *.suo
