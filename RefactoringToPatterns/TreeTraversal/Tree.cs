@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Text;
 
 namespace refactoring_to_visitor.TreeTraversal
 {
@@ -9,19 +8,33 @@ namespace refactoring_to_visitor.TreeTraversal
         public List<Folder> Folders = new List<Folder>();
         public List<Doc> Docs = new List<Doc>();
 
-        public string ListContent()
+        public string ListContent(TreeVisitor treeVisitor)
         {
-            var stringBuilder = new StringBuilder();
-            stringBuilder.AppendLine(Name);
+            Accept(treeVisitor);
+            return treeVisitor.Result();
+        }
+
+        private void Accept(TreeVisitor treeVisitor)
+        {
+            treeVisitor.Visit(this);
             foreach (var folder in Folders)
             {
-                stringBuilder.Append(folder.Content);
+                Accept(folder, treeVisitor);
             }
             foreach (var doc in Docs)
             {
-                stringBuilder.Append(doc.Content);
+                Accept(doc, treeVisitor);
             }
-            return stringBuilder.ToString();
+        }
+
+        private void Accept(Doc doc, TreeVisitor treeVisitor)
+        {
+            treeVisitor.VisitDoc(doc);
+        }
+
+        private void Accept(Folder folder, TreeVisitor treeVisitor)
+        {
+            treeVisitor.VisitFolder(folder);
         }
     }
 }

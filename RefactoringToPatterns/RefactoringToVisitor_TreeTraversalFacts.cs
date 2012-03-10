@@ -4,7 +4,7 @@ using refactoring_to_visitor.TreeTraversal;
 
 namespace refactoring_to_visitor
 {
-    public class RefactoringToVisitorFacts
+    public class RefactoringToVisitor_TreeTraversalFacts
     {
         [Fact]
         public void test_to_ensure_refactoing()
@@ -52,7 +52,7 @@ namespace refactoring_to_visitor
                            };
 
 
-            var expected = @"TEST TREE
+            const string expected = @"TEST TREE
 FOLDER1
 CATA1
 DOC1
@@ -65,7 +65,7 @@ DOC4
 <Graph>: GRAPH1, TEXT, 10
 [Movie]: MI, WB, 65535
 ";
-            Assert.Equal(expected, tree.ListContent());
+            Assert.Equal(expected, tree.ListContent(new TreeVisitor()));
         }
     }
 }
