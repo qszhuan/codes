@@ -8,13 +8,7 @@ namespace refactoring_to_visitor.TreeTraversal
         public List<Folder> Folders = new List<Folder>();
         public List<Doc> Docs = new List<Doc>();
 
-        public string ListContent(TreeVisitor treeVisitor)
-        {
-            Accept(treeVisitor);
-            return treeVisitor.Result();
-        }
-
-        private void Accept(TreeVisitor treeVisitor)
+        public void Accept(TreeVisitor treeVisitor)
         {
             treeVisitor.Visit(this);
             foreach (var folder in Folders)

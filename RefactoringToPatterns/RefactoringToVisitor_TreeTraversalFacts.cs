@@ -65,7 +65,9 @@ DOC4
 <Graph>: GRAPH1, TEXT, 10
 [Movie]: MI, WB, 65535
 ";
-            Assert.Equal(expected, tree.ListContent(new TreeVisitor()));
+            var treeVisitor = new TreeVisitor();
+            tree.Accept(treeVisitor);
+            Assert.Equal(expected, treeVisitor.Result());
         }
     }
 }

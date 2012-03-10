@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 
 namespace refactoring_to_visitor.TreeTraversal
 {
@@ -13,6 +14,11 @@ namespace refactoring_to_visitor.TreeTraversal
         public string Content
         {
             get { return string.Format("<Graph>: {0}, {1}, {2}{3}", Name, Text, Size, Environment.NewLine); }
+        }
+
+        public void Accept(TreeVisitor treeVisitor)
+        {
+            treeVisitor.VisitElement(this);
         }
     }
 }

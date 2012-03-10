@@ -12,19 +12,25 @@ namespace refactoring_to_visitor.TreeTraversal
             return;
         }
 
-        public void VisitDoc(Doc doc)
+        public string Result()
         {
-            _stringBuilder.Append(doc.Content);
+            return _stringBuilder.ToString();
         }
 
         public void VisitFolder(Folder folder)
         {
-            _stringBuilder.Append(folder.Content);
+            _stringBuilder.AppendLine(folder.FolderName);
+            _stringBuilder.AppendLine(folder.Category);
         }
 
-        public string Result()
+        public void VisitDoc(Doc doc)
         {
-            return _stringBuilder.ToString();
+            _stringBuilder.AppendLine(doc.Title);
+        }
+
+        public void VisitElement(IElement graph)
+        {
+            _stringBuilder.Append(graph.Content);
         }
     }
 }

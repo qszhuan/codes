@@ -6,5 +6,6 @@ namespace refactoring_to_visitor.TreeTraversal
         string Text { get; set; }
         int Size { get; set; }
         string Content { get; }
+        void Accept(TreeVisitor treeVisitor);
     }
 }
