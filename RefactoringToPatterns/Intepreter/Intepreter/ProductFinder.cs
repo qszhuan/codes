@@ -14,8 +14,9 @@ namespace Intepreter
 
         public List<Product> ByColor(Color color)
         {
+            var colorSpec = new ColorSpec(color);
             var products = productRepository.GetAllProducts();
-            return products.Where(p => p.ProductColor.Equals(color)).ToList();
+            return products.Where(colorSpec.IsSatisfiedBy).ToList();
         }
 
         public List<Product> ByPrice(float price)
