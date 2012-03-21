@@ -1,6 +1,8 @@
-﻿using Intepreter;
+﻿using System.Collections.Generic;
+using Intepreter;
 using Xunit;
 using System.Linq;
+using Xunit.Extensions;
 
 namespace IntepreterTest
 {
@@ -32,7 +34,8 @@ namespace IntepreterTest
         [Fact]
         public void test_find_by_color()
         {
-            var products = finder.ByColor(Color.Red);
+            var colorSpec = new ColorSpec(Color.Red);
+            var products = finder.SelectBy(colorSpec);
             Assert.Equal(2, products.Count);
             Assert.True(products.Contains(fireTruck));
             Assert.True(products.Contains(toyConvertible));
@@ -41,7 +44,8 @@ namespace IntepreterTest
         [Fact]
         public void test_find_by_price()
         {
-            var products = finder.ByPrice(8.95f);
+            var priceSpec = new OfPriceSpec(8.95f);
+            var products = finder.SelectBy(priceSpec);
             Assert.Equal(2, products.Count);
             Assert.Equal(8.95f, products.ElementAt(0).Price);
             Assert.Equal(8.95f, products.ElementAt(1).Price);
@@ -50,10 +54,12 @@ namespace IntepreterTest
         [Fact]
         public void test_find_by_color_size_and_below_price()
         {
-            var products = finder.ByColorSizeAndBelowPrice(Color.Red, ProductSize.SMALL, 10.00F);
+            var andSpec = new AndSpec(new ColorSpec(Color.Red), new SizeSpec(ProductSize.SMALL), new BelowPriceSpec(10.00F));
+            var products = finder.SelectBy(andSpec);
             Assert.Equal(0, products.Count);
 
-            products = finder.ByColorSizeAndBelowPrice(Color.Red, ProductSize.MEDIUM, 10.00F);
+            var andSpec1 = new AndSpec(new ColorSpec(Color.Red), new SizeSpec(ProductSize.MEDIUM), new BelowPriceSpec(10.00F));
+            products = finder.SelectBy(andSpec1);
             Assert.Equal(1, products.Count);
             Assert.Equal(fireTruck, products.ElementAt(0));
         }
@@ -61,11 +67,14 @@ namespace IntepreterTest
         [Fact]
         public void test_find_by_below_price_and_avoid_a_color()
         {
-            var products = finder.BelowPriceAvoidingAColor(9.00f, Color.White);
+            var andSpec = new AndSpec(new NotSpec(new ColorSpec(Color.White)), new BelowPriceSpec(9.00f));
+            var products = finder.SelectBy(andSpec);
             Assert.Equal(1, products.Count);
-            Assert.Equal(fireTruck, products.ElementAt(0));            
-            
-            products = finder.BelowPriceAvoidingAColor(9.00f, Color.Red);
+            Assert.Equal(fireTruck, products.ElementAt(0));
+
+            var andSpec1 = new AndSpec(new NotSpec(new ColorSpec(Color.Red)), new BelowPriceSpec(9.00f));
+
+            products = finder.SelectBy(andSpec1);
             Assert.Equal(1, products.Count);
             Assert.Equal(baseball, products.ElementAt(0));
         }
