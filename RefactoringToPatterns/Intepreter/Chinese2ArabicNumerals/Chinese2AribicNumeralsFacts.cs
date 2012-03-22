@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Xunit;
+﻿using Xunit;
 using Xunit.Extensions;
 
 namespace Chinese2ArabicNumerals
@@ -17,41 +16,30 @@ namespace Chinese2ArabicNumerals
         [InlineData("七", "7")]
         [InlineData("八", "8")]
         [InlineData("九", "9")]
-        public void should_be_able_to_transform_single_chinese_digit_to_arabic(string chineseDigit, string arabicDigit)
+        public void should_transform_single_chinese_digit_to_arabic(string chineseDigit, string arabicDigit)
         {
             var chiniseDigit = new ChiniseDigit(chineseDigit);
             var transform = chiniseDigit.Transform();
             Assert.Equal(arabicDigit, transform);
         }
-    }
 
-    public class ChiniseDigit
-    {
-        private readonly string _s;
-        private static readonly Dictionary<string, string> mapping = new Dictionary<string, string>()
-                                                                {
-                                                                    {"零", "0"},
-                                                                    {"一", "1"},
-                                                                    {"二", "2"},
-                                                                    {"三", "3"},
-                                                                    {"四", "4"},
-                                                                    {"五", "5"},
-                                                                    {"六", "6"},
-                                                                    {"七", "7"},
-                                                                    {"八", "8"},
-                                                                    {"九", "9"}
-                                                                };
-
-        public ChiniseDigit(string s)
+        [Theory]
+        [InlineData("十", "10")]
+        [InlineData("十一", "11")]
+        [InlineData("二十", "20")]
+        [InlineData("二十一", "21")]
+        public void should_transform_chinese_tens_digit_to_arabic(string chineseDigit, string arabicDigit)
         {
-            _s = s;
+            var chiniseDigit = new ChiniseDigit(chineseDigit);
+            var transform = chiniseDigit.Transform();
+            Assert.Equal(arabicDigit, transform);
         }
 
-        public string Transform()
+        [Theory]
+        [InlineData("一百")]
+        public void should_transform_the_chinese_hundreds_to_arbic(string chineseDigit, string arabicDigit)
         {
-            string result;
-            mapping.TryGetValue(_s, out result);
-            return result;
+            Assert.Equal(1,1);
         }
     }
 }
