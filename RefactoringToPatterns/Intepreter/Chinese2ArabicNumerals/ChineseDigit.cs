@@ -34,50 +34,55 @@ namespace Chinese2ArabicNumerals
         {
             var stringBuilder = new StringBuilder();
             var reverse = Origin.Reverse();
+
             foreach (var digit in reverse)
             {
                 var key = digit.ToString();
+
+                if (stringBuilder.Length == 0)
+                {
+                    stringBuilder.Append(mapping.Get(key));
+                    continue;
+                }
+
                 if (key == "千")
                 {
-                    stringBuilder.Insert(0, stringBuilder.Length == 0 ? mapping.Get(key) : string.Empty);
-                    var diffLen = mapping.Get(key).Length - stringBuilder.Length;
-                    for (var i = 0; i < diffLen; i++)
-                    {
-                        InsertZero(stringBuilder);
-                    }
+                    AddZero(key, stringBuilder);
+                    stringBuilder.Insert(0, mapping["一"]);
+                    continue;
+
                 }
-                else if (key == "百")
+                if (key == "百")
                 {
-                    stringBuilder.Insert(0, stringBuilder.Length == 0 ? mapping.Get(key) : mapping["一"]);
+                    AddZero(key, stringBuilder);
+                    stringBuilder.Insert(0, mapping["一"]);
+                    continue;
+
                 }
-                else if (key == "十")
+                if (key == "十")
                 {
-                    stringBuilder.Insert(0, stringBuilder.Length == 0 ? mapping[key] : mapping["一"]);
+                    AddZero(key, stringBuilder);
+                    stringBuilder.Insert(0, mapping["一"]);
+                    continue;
                 }
-                else if (key == "零")
+                if (key == "零")
                 {
-                    InsertZero(stringBuilder);
+                    continue;
                 }
-                else
-                {
-                    if (stringBuilder.Length == 0)
-                    {
-                        stringBuilder.Insert(0, mapping.Get(key));
-                    }
-                    else
-                    {
-                        stringBuilder.Remove(0, 1);
-                        stringBuilder.Insert(0, mapping.Get(key));
-                    }
-                }
+                stringBuilder.Remove(0, 1);
+                stringBuilder.Insert(0, mapping.Get(key));
             }
 
             return stringBuilder.ToString();
         }
 
-        private static StringBuilder InsertZero(StringBuilder stringBuilder)
+        private static void AddZero(string key, StringBuilder stringBuilder)
         {
-            return stringBuilder.Insert(0, mapping.Get("零"));
+            var diffLen = mapping.Get(key).Length - stringBuilder.Length;
+            for (var i = 0; i < diffLen - 1; i++)
+            {
+                stringBuilder.Insert(0, mapping.Get("零"));
+            }
         }
     }
 }

@@ -25,8 +25,8 @@ namespace Chinese2ArabicNumerals
 
         [Theory]
         [InlineData("十", "10")]
-        [InlineData("十一", "11")]
         [InlineData("一十", "10")]
+        [InlineData("十一", "11")]
         [InlineData("二十", "20")]
         [InlineData("二十一", "21")]
         public void should_transform_chinese_tens_digit_to_arabic(string chineseDigit, string arabicDigit)
@@ -56,6 +56,7 @@ namespace Chinese2ArabicNumerals
         [InlineData("一千一百一十一","1111")]
         [InlineData("一千一百零一","1101")]
         [InlineData("一千零一","1001")]
+        [InlineData("一千零一十一","1011")]
         public void should_transform_the_chinese_thousands_to_arabic(string chineseDigit, string arabicDigit)
         {
             var chinese = new ChineseDigit(chineseDigit);
