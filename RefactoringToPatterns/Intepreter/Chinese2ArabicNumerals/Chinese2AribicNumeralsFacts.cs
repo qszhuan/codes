@@ -50,14 +50,27 @@ namespace Chinese2ArabicNumerals
         }
 
         [Theory]
-        [InlineData("一千","1000")]
-        [InlineData("一千一百","1100")]
-        [InlineData("一千一百一十","1110")]
-        [InlineData("一千一百一十一","1111")]
-        [InlineData("一千一百零一","1101")]
-        [InlineData("一千零一","1001")]
-        [InlineData("一千零一十一","1011")]
+        [InlineData("一千", "1000")]
+        [InlineData("一千一百", "1100")]
+        [InlineData("一千一百一十", "1110")]
+        [InlineData("一千一百一十一", "1111")]
+        [InlineData("一千一百零一", "1101")]
+        [InlineData("一千零一", "1001")]
+        [InlineData("一千零一十一", "1011")]
         public void should_transform_the_chinese_thousands_to_arabic(string chineseDigit, string arabicDigit)
+        {
+            var chinese = new ChineseDigit(chineseDigit);
+            var transform = chinese.Transform();
+            Assert.Equal(arabicDigit, transform);
+        }
+
+        [Theory]
+        [InlineData("一万", "10000")]
+        [InlineData("一万一千一百一十一", "11111")]
+        [InlineData("一万零五", "10005")]
+        [InlineData("一万零五十", "10050")]
+//        [InlineData("十万", "100000")]
+        public void should_transform_the_chinese_Wan_digit_to_arabic(string chineseDigit, string arabicDigit)
         {
             var chinese = new ChineseDigit(chineseDigit);
             var transform = chinese.Transform();

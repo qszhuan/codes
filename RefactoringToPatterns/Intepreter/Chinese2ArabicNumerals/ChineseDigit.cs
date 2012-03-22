@@ -21,6 +21,7 @@ namespace Chinese2ArabicNumerals
                                                                              {"十", "10"},
                                                                              {"百", "100"},
                                                                              {"千", "1000"},
+                                                                             {"万", "10000"},
                                                                          };
 
         private readonly string Origin;
@@ -45,19 +46,23 @@ namespace Chinese2ArabicNumerals
                     continue;
                 }
 
+                if (key == "万")
+                {
+                    AddZero(key, stringBuilder);
+                    stringBuilder.Insert(0, mapping["一"]);
+                    continue;
+                }
                 if (key == "千")
                 {
                     AddZero(key, stringBuilder);
                     stringBuilder.Insert(0, mapping["一"]);
                     continue;
-
                 }
                 if (key == "百")
                 {
                     AddZero(key, stringBuilder);
                     stringBuilder.Insert(0, mapping["一"]);
                     continue;
-
                 }
                 if (key == "十")
                 {
