@@ -6,7 +6,7 @@ namespace Chinese2ArabicNumerals
 {
     public class ChineseDigit
     {
-        private static readonly Dictionary<string, string> mapping = new Dictionary<string, string>()
+        private static readonly Dictionary<string, string> mapping = new Dictionary<string, string>
                                                                          {
                                                                              {"零", "0"},
                                                                              {"一", "1"},
@@ -25,6 +25,7 @@ namespace Chinese2ArabicNumerals
                                                                          };
 
         private readonly string Origin;
+        private bool IsTenLeading;
 
         public ChineseDigit(string s)
         {
@@ -39,55 +40,42 @@ namespace Chinese2ArabicNumerals
             foreach (var digit in reverse)
             {
                 var key = digit.ToString();
+                IsTenLeading = key == "十";
 
-                if (stringBuilder.Length == 0)
+                var diffLen = mapping.Get(key).Length - stringBuilder.Length;
+                var zeroCount = diffLen - 1;
+                switch (key)
                 {
-                    stringBuilder.Append(mapping.Get(key));
-                    continue;
+                    case "万":
+                        UnshiftZero(stringBuilder, zeroCount);
+                        break;
+                    case "千":
+                        UnshiftZero(stringBuilder, zeroCount);
+                        break;
+                    case "百":
+                        UnshiftZero(stringBuilder, zeroCount);
+                        break;
+                    case "十":
+                        UnshiftZero(stringBuilder, zeroCount);
+                        break;
+                    default:
+                        stringBuilder.Insert(0, mapping.Get(key));
+                        break;
                 }
-
-                if (key == "万")
-                {
-                    AddZero(key, stringBuilder);
-                    stringBuilder.Insert(0, mapping["一"]);
-                    continue;
-                }
-                if (key == "千")
-                {
-                    AddZero(key, stringBuilder);
-                    stringBuilder.Insert(0, mapping["一"]);
-                    continue;
-                }
-                if (key == "百")
-                {
-                    AddZero(key, stringBuilder);
-                    stringBuilder.Insert(0, mapping["一"]);
-                    continue;
-                }
-                if (key == "十")
-                {
-                    AddZero(key, stringBuilder);
-                    stringBuilder.Insert(0, mapping["一"]);
-                    continue;
-                }
-                if (key == "零")
-                {
-                    continue;
-                }
-                stringBuilder.Remove(0, 1);
-                stringBuilder.Insert(0, mapping.Get(key));
             }
 
+            if (IsTenLeading)
+            {
+                stringBuilder.Insert(0, 1);
+            }
             return stringBuilder.ToString();
         }
 
-        private static void AddZero(string key, StringBuilder stringBuilder)
+        private static void UnshiftZero(StringBuilder stringBuilder, int zeroCount)
         {
-            var diffLen = mapping.Get(key).Length - stringBuilder.Length;
-            for (var i = 0; i < diffLen - 1; i++)
-            {
-                stringBuilder.Insert(0, mapping.Get("零"));
-            }
+            stringBuilder.Insert(0, mapping.Get("零"), zeroCount);
         }
     }
+
+
 }

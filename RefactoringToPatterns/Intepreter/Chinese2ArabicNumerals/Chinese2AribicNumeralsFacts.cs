@@ -64,17 +64,17 @@ namespace Chinese2ArabicNumerals
             Assert.Equal(arabicDigit, transform);
         }
 
-        [Theory]
-        [InlineData("一万", "10000")]
-        [InlineData("一万一千一百一十一", "11111")]
-        [InlineData("一万零五", "10005")]
-        [InlineData("一万零五十", "10050")]
+//        [Theory]
+//        [InlineData("一万", "10000")]
+//        [InlineData("一万一千一百一十一", "11111")]
+//        [InlineData("一万零五", "10005")]
+//        [InlineData("一万零五十", "10050")]
 //        [InlineData("十万", "100000")]
-        public void should_transform_the_chinese_Wan_digit_to_arabic(string chineseDigit, string arabicDigit)
-        {
-            var chinese = new ChineseDigit(chineseDigit);
-            var transform = chinese.Transform();
-            Assert.Equal(arabicDigit, transform);
-        }
+//        public void should_transform_the_chinese_Wan_digit_to_arabic(string chineseDigit, string arabicDigit)
+//        {
+//            var chinese = new ChineseDigit(chineseDigit);
+//            var transform = chinese.Transform();
+//            Assert.Equal(arabicDigit, transform);
+//        }
     }
 }
