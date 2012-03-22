@@ -26,6 +26,7 @@ namespace Chinese2ArabicNumerals
 
         private readonly string Origin;
         private bool IsTenLeading;
+        private bool TouchedWan;
 
         public ChineseDigit(string s)
         {
@@ -42,21 +43,22 @@ namespace Chinese2ArabicNumerals
                 var key = digit.ToString();
                 IsTenLeading = key == "十";
 
-                var diffLen = mapping.Get(key).Length - stringBuilder.Length;
-                var zeroCount = diffLen - 1;
+                var zeroCount = GetZeroCount(stringBuilder, key);
+
                 switch (key)
                 {
                     case "万":
-                        UnshiftZero(stringBuilder, zeroCount);
+                        TouchedWan = true;
+                        stringBuilder.Insert(0, mapping.Get("零"), zeroCount);
                         break;
                     case "千":
-                        UnshiftZero(stringBuilder, zeroCount);
+                        stringBuilder.Insert(0, mapping.Get("零"), zeroCount);
                         break;
                     case "百":
-                        UnshiftZero(stringBuilder, zeroCount);
+                        stringBuilder.Insert(0, mapping.Get("零"), zeroCount);
                         break;
                     case "十":
-                        UnshiftZero(stringBuilder, zeroCount);
+                        stringBuilder.Insert(0, mapping.Get("零"), zeroCount);
                         break;
                     default:
                         stringBuilder.Insert(0, mapping.Get(key));
@@ -71,11 +73,11 @@ namespace Chinese2ArabicNumerals
             return stringBuilder.ToString();
         }
 
-        private static void UnshiftZero(StringBuilder stringBuilder, int zeroCount)
+        private int GetZeroCount(StringBuilder stringBuilder, string key)
         {
-            stringBuilder.Insert(0, mapping.Get("零"), zeroCount);
+            var currentDigit = mapping.Get(key).Length + (TouchedWan? 4: 0);
+            var prevDigit = stringBuilder.Length;
+            return currentDigit - prevDigit - 1;
         }
     }
-
-
 }
