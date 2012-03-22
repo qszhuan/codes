@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Chinese2ArabicNumerals
 {
-    public class ChiniseDigit
+    public class ChineseDigit
     {
         private static readonly Dictionary<string, string> mapping = new Dictionary<string, string>()
                                                                          {
@@ -20,11 +20,12 @@ namespace Chinese2ArabicNumerals
                                                                              {"九", "9"},
                                                                              {"十", "10"},
                                                                              {"百", "100"},
+                                                                             {"千", "1000"},
                                                                          };
 
         private readonly string Origin;
 
-        public ChiniseDigit(string s)
+        public ChineseDigit(string s)
         {
             Origin = s;
         }
@@ -36,8 +37,16 @@ namespace Chinese2ArabicNumerals
             foreach (var digit in reverse)
             {
                 var key = digit.ToString();
-
-                if (key == "百")
+                if (key == "千")
+                {
+                    stringBuilder.Insert(0, stringBuilder.Length == 0 ? mapping.Get(key) : string.Empty);
+                    var diffLen = mapping.Get(key).Length - stringBuilder.Length;
+                    for (var i = 0; i < diffLen; i++)
+                    {
+                        InsertZero(stringBuilder);
+                    }
+                }
+                else if (key == "百")
                 {
                     stringBuilder.Insert(0, stringBuilder.Length == 0 ? mapping.Get(key) : mapping["一"]);
                 }
@@ -47,7 +56,7 @@ namespace Chinese2ArabicNumerals
                 }
                 else if (key == "零")
                 {
-                    stringBuilder.Insert(0, mapping.Get(key));
+                    InsertZero(stringBuilder);
                 }
                 else
                 {
@@ -64,6 +73,11 @@ namespace Chinese2ArabicNumerals
             }
 
             return stringBuilder.ToString();
+        }
+
+        private static StringBuilder InsertZero(StringBuilder stringBuilder)
+        {
+            return stringBuilder.Insert(0, mapping.Get("零"));
         }
     }
 }

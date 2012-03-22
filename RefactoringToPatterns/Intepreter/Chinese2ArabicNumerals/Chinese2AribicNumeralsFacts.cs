@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Xunit;
+﻿using Xunit;
 using Xunit.Extensions;
 
 namespace Chinese2ArabicNumerals
@@ -19,8 +18,8 @@ namespace Chinese2ArabicNumerals
         [InlineData("九", "9")]
         public void should_transform_single_chinese_digit_to_arabic(string chineseDigit, string arabicDigit)
         {
-            var chiniseDigit = new ChiniseDigit(chineseDigit);
-            var transform = chiniseDigit.Transform();
+            var chinese = new ChineseDigit(chineseDigit);
+            var transform = chinese.Transform();
             Assert.Equal(arabicDigit, transform);
         }
 
@@ -32,8 +31,8 @@ namespace Chinese2ArabicNumerals
         [InlineData("二十一", "21")]
         public void should_transform_chinese_tens_digit_to_arabic(string chineseDigit, string arabicDigit)
         {
-            var chiniseDigit = new ChiniseDigit(chineseDigit);
-            var transform = chiniseDigit.Transform();
+            var chinese = new ChineseDigit(chineseDigit);
+            var transform = chinese.Transform();
             Assert.Equal(arabicDigit, transform);
         }
 
@@ -43,14 +42,25 @@ namespace Chinese2ArabicNumerals
         [InlineData("二百一十", "210")]
         [InlineData("二百一十一", "211")]
         [InlineData("二百零一", "201")]
-        public void should_transform_the_chinese_hundreds_to_arbic(string chineseDigit, string arabicDigit)
+        public void should_transform_the_chinese_hundreds_to_arabic(string chineseDigit, string arabicDigit)
         {
-            var chiniseDigit = new ChiniseDigit(chineseDigit);
-            var transform = chiniseDigit.Transform();
+            var chinese = new ChineseDigit(chineseDigit);
+            var transform = chinese.Transform();
             Assert.Equal(arabicDigit, transform);
         }
 
-
-      
+        [Theory]
+        [InlineData("一千","1000")]
+        [InlineData("一千一百","1100")]
+        [InlineData("一千一百一十","1110")]
+        [InlineData("一千一百一十一","1111")]
+        [InlineData("一千一百零一","1101")]
+        [InlineData("一千零一","1001")]
+        public void should_transform_the_chinese_thousands_to_arabic(string chineseDigit, string arabicDigit)
+        {
+            var chinese = new ChineseDigit(chineseDigit);
+            var transform = chinese.Transform();
+            Assert.Equal(arabicDigit, transform);
+        }
     }
 }
