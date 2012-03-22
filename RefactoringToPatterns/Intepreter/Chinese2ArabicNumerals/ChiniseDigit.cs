@@ -19,6 +19,7 @@ namespace Chinese2ArabicNumerals
                                                                              {"八", "8"},
                                                                              {"九", "9"},
                                                                              {"十", "10"},
+                                                                             {"百", "100"},
                                                                          };
 
         private readonly string Origin;
@@ -34,20 +35,30 @@ namespace Chinese2ArabicNumerals
             var reverse = Origin.Reverse();
             foreach (var digit in reverse)
             {
-                if (digit.ToString() == "十")
+                var key = digit.ToString();
+
+                if (key == "百")
                 {
-                    stringBuilder.Insert(0, stringBuilder.Length == 0 ? mapping["十"] : mapping["一"]);
+                    stringBuilder.Insert(0, stringBuilder.Length == 0 ? mapping.Get(key) : mapping["一"]);
+                }
+                else if (key == "十")
+                {
+                    stringBuilder.Insert(0, stringBuilder.Length == 0 ? mapping[key] : mapping["一"]);
+                }
+                else if (key == "零")
+                {
+                    stringBuilder.Insert(0, mapping.Get(key));
                 }
                 else
                 {
                     if (stringBuilder.Length == 0)
                     {
-                        stringBuilder.Insert(0, mapping[digit.ToString()]);
+                        stringBuilder.Insert(0, mapping.Get(key));
                     }
                     else
                     {
                         stringBuilder.Remove(0, 1);
-                        stringBuilder.Insert(0, mapping[digit.ToString()]);
+                        stringBuilder.Insert(0, mapping.Get(key));
                     }
                 }
             }
