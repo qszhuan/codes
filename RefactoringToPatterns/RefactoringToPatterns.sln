@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefactoringToVisitor", "vis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chinese2ArabicNumerals", "Intepreter\Chinese2ArabicNumerals\Chinese2ArabicNumerals.csproj", "{639A5242-AAD0-4976-AEED-EE4D2EB4B04E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaskExpression", "Intepreter\MaskExpression\MaskExpression.csproj", "{26E869AB-1AA0-4AE3-A905-1C54C8DB554D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{639A5242-AAD0-4976-AEED-EE4D2EB4B04E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{639A5242-AAD0-4976-AEED-EE4D2EB4B04E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{639A5242-AAD0-4976-AEED-EE4D2EB4B04E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26E869AB-1AA0-4AE3-A905-1C54C8DB554D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26E869AB-1AA0-4AE3-A905-1C54C8DB554D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26E869AB-1AA0-4AE3-A905-1C54C8DB554D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26E869AB-1AA0-4AE3-A905-1C54C8DB554D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,5 +50,6 @@ Global
 		{923E12D4-1758-4F18-BE9F-6AD89DEF7645} = {B6B71C82-0267-497C-BFBF-D6F59829D04D}
 		{0C1F2D04-9F23-4D0C-AFEB-2A97B024A7B9} = {B6B71C82-0267-497C-BFBF-D6F59829D04D}
 		{639A5242-AAD0-4976-AEED-EE4D2EB4B04E} = {B6B71C82-0267-497C-BFBF-D6F59829D04D}
+		{26E869AB-1AA0-4AE3-A905-1C54C8DB554D} = {B6B71C82-0267-497C-BFBF-D6F59829D04D}
 	EndGlobalSection
 EndGlobal
