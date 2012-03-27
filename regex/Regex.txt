@@ -42,3 +42,16 @@ one columns
 .*\n((?!column).)*$
 
 http://stackoverflow.com/questions/406230/regular-expression-to-match-string-not-containing-a-word
+
+
+Hoho
+Hihi
+Haha
+hede
+
+([^h]*(h([^e]|$)|he([^d]|$)|hed([^e]|$)))*
+
+Jeff's
+
+"123456789".gsub /(?<=\d)(?=(?:\d\d\d)+$)/, "'"
+"Jeffs".gsub(/(?<=Jeff)(?=s)/, "'")
