@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Range.cs" />
     <Compile Include="RangeCalculator.cs" />
     <Compile Include="TaxCalcFacts.cs" />
     <Compile Include="TaxCalculator.cs" />
