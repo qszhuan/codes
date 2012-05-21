@@ -14,3 +14,6 @@ ferrari := Car clone
 ferrari slotNames println	#小写字母开头
 ferrari type println 		#得到Car的type
 
+ferrari clone println		#different with ferrari
+ferrari println
+
